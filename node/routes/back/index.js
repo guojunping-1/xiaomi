@@ -1,0 +1,13 @@
+const express = require('express');
+const backRouter = express.Router();
+const userRouter = require("./usersRouter");
+const merchantsRouter = require("./merchants");
+const productRouter = require("./productRouter");
+const categoryRouter = require("./categoryRouter");
+const orderRouter = require("./order");
+backRouter.use("/",userRouter);
+backRouter.use("/merchants",merchantsRouter);
+backRouter.use("/product",productRouter);
+backRouter.use("/category",categoryRouter);
+backRouter.use("/order",orderRouter);
+module.exports = backRouter;
